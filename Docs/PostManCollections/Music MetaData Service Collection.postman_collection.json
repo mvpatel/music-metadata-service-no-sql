@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "8fe07193-a761-41c8-bfe2-490c186dfe67",
+		"name": "Music MetaData Service Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "537538",
+		"_collection_link": "https://orange-shuttle-815054.postman.co/workspace/backendSpringbootTemplate~a51c106d-102b-42ea-843e-f43423a03589/collection/537538-8fe07193-a761-41c8-bfe2-490c186dfe67?action=share&source=collection_link&creator=537538"
+	},
+	"item": [
+		{
+			"name": "Add Artist",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Name 1\",\n    \"aliases\": [\"aliase 1\", \"aliase 2\"]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/artists",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"artists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Artist By Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/artists/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"artists",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "123",
+							"description": "(Required) "
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/artists/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"artists",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"id\": 123,\n  \"name\": \"John Doe\",\n  \"aliases\": [\n    \"JD\",\n    \"The Artist\"\n  ]\n}"
+				}
+			]
+		},
+		{
+			"name": "update Artist Name",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 123,\n  \"name\": \"New Artist Name\",\n  \"aliases\": [\n    \"New Alias 1\",\n    \"New Alias 2\"\n  ]\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/artists/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"artists",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "123",
+							"description": "(Required) "
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 123,\n  \"name\": \"New Artist Name\",\n  \"aliases\": [\n    \"New Alias 1\",\n    \"New Alias 2\"\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/artists/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"artists",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"id\": 123,\n  \"name\": \"New Artist Name\",\n  \"aliases\": [\n    \"New Alias 1\",\n    \"New Alias 2\"\n  ]\n}"
+				}
+			]
+		},
+		{
+			"name": "get All Artists",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/artists",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"artists"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/artists",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"artists"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"id\": 123,\n    \"name\": \"John Doe\",\n    \"aliases\": [\n      \"JD\",\n      \"The Artist\"\n    ]\n  },\n  {\n    \"id\": 456,\n    \"name\": \"Jane Doe\",\n    \"aliases\": [\n      \"JD\",\n      \"The Artist\"\n    ]\n  }\n]"
+				}
+			]
+		},
+		{
+			"name": "get Artist Of The Day",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/artists/artist-of-the-day",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"artists",
+						"artist-of-the-day"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/artists/artist-of-the-day",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"artists",
+								"artist-of-the-day"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"id\": 123,\n  \"name\": \"Artist of the Day\",\n  \"aliases\": [\n    \"AOTD\",\n    \"Top Artist\"\n  ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Track",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Track Title 1\",\n    \"genre\": \"Pop\",\n    \"length\": 300,\n    \"artistId\": 1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tracks",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find Tracks By Artist Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/tracks/artist/:artistId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tracks",
+						"artist",
+						":artistId"
+					],
+					"variable": [
+						{
+							"key": "artistId",
+							"value": "123",
+							"description": "(Required) "
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/tracks/artist/:artistId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tracks",
+								"artist",
+								":artistId"
+							],
+							"variable": [
+								{
+									"key": "artistId"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"genre\": \"Pop\",\n    \"length\": 240,\n    \"title\": \"Track 1\",\n    \"id\": 1,\n    \"artist\": {\n      \"id\": 123,\n      \"name\": \"John Doe\",\n      \"aliases\": [\n        \"JD\",\n        \"The Artist\"\n      ]\n    }\n  },\n  {\n    \"genre\": \"Rock\",\n    \"length\": 180,\n    \"title\": \"Track 2\",\n    \"id\": 2,\n    \"artist\": {\n      \"id\": 123,\n      \"name\": \"John Doe\",\n      \"aliases\": [\n        \"JD\",\n        \"The Artist\"\n      ]\n    }\n  }\n]"
+				}
+			]
+		}
+	]
+}
